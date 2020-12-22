@@ -1,0 +1,83 @@
+<script>
+    let arrA = [
+        {
+            code: "M", 
+            nama: "Mango"
+        },
+        {
+            code: "A", 
+            nama: "Apple"
+        },
+        {
+            code: "Me", 
+            nama: "Melon"
+        },
+        {
+            code: "O", 
+            nama: "Orange"
+        },
+        {
+            code: "P", 
+            nama: "Pineapple"
+        }
+    ];
+
+    let arrB = [
+        {
+            code: "M", 
+            nama: "Mango"
+        },
+        {
+            code: "P", 
+            nama: "Pineapple"
+        },
+        {
+            code: "Pe", 
+            nama: "Pears"
+        }
+    ];
+
+    function irisan() {
+
+    }
+
+    function gabungan() {
+        let arrC = arrA.concat(arrB);
+
+        let result = arrC.filter((item, idx) => arrC.indexOf(item) === idx);
+        
+        console.log(result);
+    }
+
+    function yangTidakAda() {
+        arrA.map(x => {
+            arrB.map(y => {
+                if (x.code !== y.code && x.nama !== y.nama) {
+                    console.log(y);
+                } 
+            })
+        });
+    }
+
+    function addCustomer() {
+        let resultA = [];
+
+        arrA.map(x => {
+            let obj = {
+                code: x.code,
+                customer: x.code + ' - ' + x.nama,
+                nama: x.nama,
+            }
+
+            resultA.push(obj);
+        });
+
+        console.log(resultA);
+    }
+
+
+    irisan();
+    gabungan();
+    yangTidakAda();
+    addCustomer();
+</script>
